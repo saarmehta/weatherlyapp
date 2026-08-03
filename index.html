@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>WEATHERLY — Current Weather</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin="crossOrigin"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>WEATHERLY</h1>
+      <p>Current conditions for any city, anywhere</p>
+    </header>
+
+    <main class="main-content">
+      <section class="weather-form-section">
+        <form id="weather-form" class="weather-form" novalidate>
+          <div class="input-group">
+            <input
+              type="text"
+              id="city-input"
+              name="city"
+              placeholder="City"
+              autocomplete="off"
+              required
+            />
+            <label for="city-input" class="input-label">City</label>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="text"
+              id="country-input"
+              name="country"
+              placeholder="Country"
+              autocomplete="off"
+              required
+            />
+            <label for="country-input" class="input-label">Country</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="submit-btn">
+            <span class="btn-text">Get Weather</span>
+            <span class="btn-loading" hidden>
+              <span class="spinner"></span>
+            </span>
+          </button>
+        </form>
+
+        <p id="form-error" class="error-message" role="alert" hidden></p>
+      </section>
+
+      <section id="weather-result" class="weather-result" hidden>
+        <div class="result-content">
+          <div class="location-header">
+            <h2 id="location-name" class="location-name"></h2>
+            <p id="location-country" class="location-country"></p>
+          </div>
+
+          <div class="temperature-section">
+            <img
+              id="weather-icon"
+              class="weather-icon"
+              alt=""
+              width="80"
+              height="80"
+            />
+            <div class="temp-display">
+              <span id="temperature" class="temp-value"></span>
+              <span class="temp-unit">°C</span>
+            </div>
+          </div>
+
+          <div class="condition-section">
+            <p id="weather-condition" class="condition-text"></p>
+          </div>
+
+          <div class="stats-section">
+            <div class="stat-item">
+              <span class="stat-icon" aria-hidden="true">💧</span>
+              <span class="stat-label">Humidity</span>
+              <span id="humidity" class="stat-value"></span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon" aria-hidden="true">💨</span>
+              <span class="stat-label">Wind</span>
+              <span id="wind-speed" class="stat-value"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="message-section" class="message-section" hidden>
+        <p id="message-text" class="message-text"></p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Powered by OpenWeatherMap</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
