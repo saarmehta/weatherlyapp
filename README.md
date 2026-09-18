@@ -39,6 +39,8 @@ weather-app/
 ├── styles.css
 ├── script.js
 ├── config.example.js
+├── weather.py
+├── .gitignore
 └── README.md
 ```
 
