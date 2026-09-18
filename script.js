@@ -1,6 +1,6 @@
 "use strict";
 
-const API_KEY = "9dfbd2551a9f85b7ae01784ef89e9847";
+const API_KEY = window.OPENWEATHER_API_KEY || "";
 const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather";
 const ICON_BASE_URL = "https://openweathermap.org/img/wn";
 
@@ -92,6 +92,11 @@ function showWeather(data) {
 }
 
 async function fetchWeather(city, country) {
+  if (!API_KEY) {
+    throw new Error(
+      "API key not configured. Copy config.example.js to config.js and add your OpenWeatherMap key."
+    );
+  }
   const query = country
     ? `${city},${country}`
     : city;
