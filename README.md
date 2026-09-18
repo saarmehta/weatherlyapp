@@ -1,5 +1,7 @@
 # WEATHERLY
 
+> **Deprecated:** this project is no longer maintained. Active development continues at [weatherlyapp1](https://github.com/saarmehta/weatherlyapp1).
+
 A minimalist, client-side weather application that displays current conditions for any city and country combination.
 
 ## Features
@@ -20,13 +22,14 @@ A minimalist, client-side weather application that displays current conditions f
 ## Getting Started
 
 1. Get a free API key from [OpenWeatherMap](https://home.openweathermap.org/api_keys).
-2. Open `index.html` in your browser:
+2. Copy `config.example.js` to `config.js` and put your key in it (`config.js` is gitignored, so the key stays out of source control). Never commit a real API key to this repository.
+3. Open `index.html` in your browser:
 
    ```bash
    npx serve  # or any static file server
    ```
 
-3. Enter a city and country, then click **Get Weather**.
+4. Enter a city and country, then click **Get Weather**.
 
 ## Project Structure
 
@@ -35,6 +38,7 @@ weather-app/
 ├── index.html
 ├── styles.css
 ├── script.js
+├── config.example.js
 └── README.md
 ```
 
