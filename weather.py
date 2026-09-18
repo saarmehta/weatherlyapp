@@ -15,13 +15,12 @@ API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather"
 LOCATION_CITY = "Sydney"
 LOCATION_COUNTRY = "AU"
 REQUEST_TIMEOUT = 10
-DEFAULT_API_KEY = "9dfbd2551a9f85b7ae01784ef89e9847"
 
 
 def get_api_key():
-    """Return the API key from a CLI argument, the environment, or the default."""
+    """Return the API key from a CLI argument or the environment."""
     cli_api_key = sys.argv[1] if len(sys.argv) > 1 else None
-    api_key = cli_api_key or os.environ.get("OPENWEATHER_API_KEY") or DEFAULT_API_KEY
+    api_key = cli_api_key or os.environ.get("OPENWEATHER_API_KEY")
     if not api_key:
         print(
             "Error: No API key was provided. Pass one as an argument or set OPENWEATHER_API_KEY.",
